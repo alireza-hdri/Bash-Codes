@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+Italic(){
+#Usage of the program.
+usage(){
+echo -e " <String> --> \e[3m<String>\e[0m"
+   echo " Pleaser ener a string. "
+}
+
+#check input.
+if [[ $# -ne 1 ]];then
+    usage
+    exit 1
+fi
+
+echo -e " \e[3m$1\e[0m "
+}
