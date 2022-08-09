@@ -1,0 +1,55 @@
+#!/usr/bin/bash
+
+
+
+Function-print-color-string(){
+usage(){
+    cat <<EOL
+     Usage : <Output-String> <Color-Name>
+     Colors:red , green , yellow , blue , magneta , cyan
+EOL
+}
+if [[ $# -lt 2 ]];then   #Check Input Argoman.
+    usage
+    exit 1
+fi 
+
+ 
+case $2 in   #Color Selection.
+    red)
+        red='\033[0;31m'
+        echo -e " ${red}$1${clear} "
+        exit 0
+        ;;
+    green)
+        green='\033[0;32m'
+        echo -e " ${green}$1${clear} "
+        exit 0
+        ;;
+    yellow)
+        yellow='\033[0;33m'
+        echo -e " ${yellow}$1${clear} "
+        exit 0
+        ;;
+    blue)
+        blue='\033[0;34m'
+        echo -e " ${blue}$1${clear} "
+        exit 0
+        ;;
+    magneta)
+        magenta='\033[0;35m'
+        echo -e " ${magenta}$1${clear} "
+        exit 0
+        ;;
+    cyan)
+        cyan='\033[0;36m'
+        echo -e " ${cyan}$1${clear} "
+        exit 0
+        ;;
+    *)
+        echo "Error : Undifiend color !"
+        exit 0
+
+esac
+clear='\033[0m'  #Set color to default.
+}
