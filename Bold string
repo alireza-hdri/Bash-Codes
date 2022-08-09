@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+Bold()
+#Usage for code.
+usage(){
+    cat<<EOL
+    Usage : String --> $(tput bold)String$(tput sgr0)
+    You should enter a string. 
+EOL
+}
+
+#Check input to be String.
+if [[ $# -ne 1 ]];then
+    usage
+    exit 0
+fi
+echo "$(tput bold)$1$(tput sgr0)"
